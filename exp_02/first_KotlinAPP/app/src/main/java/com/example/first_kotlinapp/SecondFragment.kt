@@ -20,7 +20,6 @@ private var _binding: FragmentSecondBinding? = null
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +35,12 @@ private var _binding: FragmentSecondBinding? = null
         super.onViewCreated(view, savedInstanceState)
         val count = args.myArg
         view.findViewById<TextView>(R.id.textview_second).text = "Here is a random number between 0 and "+count
-
+        val random = java.util.Random()
+        var randomNumber = 0
+        if (count > 0) {
+            randomNumber = random.nextInt(count + 1)
+        }
+        view.findViewById<TextView>(R.id.textview_num).text = randomNumber.toString()
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }

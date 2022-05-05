@@ -37,18 +37,10 @@ private var _binding: FragmentFirstBinding? = null
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonRandom.setOnClickListener {
-//            val random_num = Random.nextInt(0,15)
-//            val mBundle:Bundle = Bundle()
-//            mBundle.putInt("RANDOM_NUM",random_num)
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,mBundle)
             val showCountTextView = view.findViewById<TextView>(R.id.textview_first)
             val currentCount = showCountTextView.text.toString().toInt()
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,currentCount)
             val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(currentCount)
             findNavController().navigate(action)
-
-
-
         }
 
         view.findViewById<Button>(R.id.button_toast).setOnClickListener(){
