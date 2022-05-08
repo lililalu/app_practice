@@ -52,17 +52,10 @@ private var _binding: FragmentFirstBinding? = null
         }
     }
     private fun countMe(view: View) {
-        // Get the text view
         val showCountTextView = view.findViewById<TextView>(R.id.textview_first)
-
-        // Get the value of the text view.
         val countString = showCountTextView.text.toString()
-
-        // Convert value to a number and increment it
         var count = countString.toInt()
         count++
-
-        // Display the new value in the text view.
         showCountTextView.text = count.toString()
     }
 

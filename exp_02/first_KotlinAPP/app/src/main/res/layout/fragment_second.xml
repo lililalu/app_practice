@@ -18,7 +18,7 @@
         android:id="@+id/textview_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Here is a random number between 0 and ."/>
+        android:text="Here is a random number between 0 and "/>
 
     <TextView
         android:layout_weight="2"
